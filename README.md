@@ -90,3 +90,48 @@ _runtime_. Sebagai contoh, `const Text('GENAP', style: TextStyle(color: Colors.r
             ],
         ),
     ```
+
+#Tugas 8
+## Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement.
+Navigator.push dan Navigator.pushReplacement sama-sama digunakan untuk menggantikan halaman. Namun,
+Navigator.push melakukannya dengan cara menimpa halaman sebelumnya dengan halaman yang baru, sedangkan
+Navigator.pushReplacement melakukannya dengan cara meng-_replace_ halaman sebelumnya dengan halaman yang baru.
+Navigator.push menambahkan halaman yang baru ke dalam _stack_, sedangkan Navigator.pushReplacement menggantikan
+halaman pada _stack_ sebelumnya dengan halaman yang baru.
+
+##Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+- DropdownButton: Widget yang memungkinkan _user_ untuk memilih suatu item dari beberapa item yang ada.
+- Form: Widget yang berperilaku seperti container untuk melakukan _grouping_ berbagai _form fields_
+- InputDecoration: Widget untuk mendekorasi TextField
+- TextButton: Widget _button_ yang dapat diklik dan diberikan teks
+- Navigator.pushReplacement: Widget untuk melakukan pergantian halaman dengan cara menggantikan halaman pada _stack_
+sebelumnya dengan halaman yang baru.
+
+##Sebutkan jenis-jenis event yang ada pada Flutter
+- onHover: Widget ini akan dipanggil ketika user menempatkan _mouse pointer_ nya ke suatu objek tanpa harus diklik
+- onPressed: Widget ini akan dipanggil ketika user _press_ suatu objek
+- onChanged: Widget ini akan dipanggil ketika user melakukan perubahan nilai pada suatu _fields_
+
+##Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
+Kita dapat menggunakan Navigator.push atau Navigator.pushReplacement untuk menggatikan halaman.
+Perbedaannya telah dijelaskan pada jawaban pertanyaan pertama. Untuk ilustrasi dari cara kerjanya
+adalah sebagai berikut:
+
+Navigator.push() (1), Navigator.push() (2), navigator.push() (3), Navigator.pop() (4)
+Step (4) mengakibatkan halaman kembali ke halaman yang dipush pada step (2)
+
+Navigator.push() (1), Navigator.push() (2), navigator.pushReplacement() (3), Navigator.pop() (4)
+Step (4) mengakibatkan halaman kembali ke halaman yang dipush pada step (1)
+
+
+##Jelaskan bagaimana cara kamu mengimplementasikan checklist di jawab
+1. Membuat _file_ baru bernama `drawer.dart`. Kemudian, buat suatu widget Drawer untuk
+melakukan navigasi ke halaman lain.
+2. Membuat _file_ baru bernama `form_budget.dart`. Kemudian, tambahkan kode yang diperlukan agar
+terbentuknya _form_ yang dapat menerima input dari user
+membuat _form_ yang dapat menerima input dari user.
+3. Membuat _file_ baru bernama `data_budget.dart`. Kemudian, tambahkan kode yang diperlukan agar
+objek Budget yang telah dibuat dapat ditampilkan kepada user.
+4. Tambahkan objek Drawer pada `main.dart`, `form_budget.dart`, dan `data_budget.dart`
+5. Membuat _file_ baru bernama `budget.dart` untuk membuat _class_ Budget dan BudgetStorage, yang
+menyimpan kumpulan objek Budget yang telah dibuat.
