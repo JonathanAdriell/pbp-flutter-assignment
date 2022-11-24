@@ -91,7 +91,7 @@ _runtime_. Sebagai contoh, `const Text('GENAP', style: TextStyle(color: Colors.r
         ),
     ```
 
-#Tugas 8
+# Tugas 8
 ## Jelaskan perbedaan Navigator.push dan Navigator.pushReplacement.
 Navigator.push dan Navigator.pushReplacement sama-sama digunakan untuk menggantikan halaman. Namun,
 Navigator.push melakukannya dengan cara menimpa halaman sebelumnya dengan halaman yang baru, sedangkan
@@ -99,7 +99,7 @@ Navigator.pushReplacement melakukannya dengan cara meng-_replace_ halaman sebelu
 Navigator.push menambahkan halaman yang baru ke dalam _stack_, sedangkan Navigator.pushReplacement menggantikan
 halaman pada _stack_ sebelumnya dengan halaman yang baru.
 
-##Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
 - DropdownButton: Widget yang memungkinkan _user_ untuk memilih suatu item dari beberapa item yang ada.
 - Form: Widget yang berperilaku seperti container untuk melakukan _grouping_ berbagai _form fields_
 - InputDecoration: Widget untuk mendekorasi TextField
@@ -107,12 +107,12 @@ halaman pada _stack_ sebelumnya dengan halaman yang baru.
 - Navigator.pushReplacement: Widget untuk melakukan pergantian halaman dengan cara menggantikan halaman pada _stack_
 sebelumnya dengan halaman yang baru.
 
-##Sebutkan jenis-jenis event yang ada pada Flutter
+## Sebutkan jenis-jenis event yang ada pada Flutter
 - onHover: Widget ini akan dipanggil ketika user menempatkan _mouse pointer_ nya ke suatu objek tanpa harus diklik
 - onPressed: Widget ini akan dipanggil ketika user _press_ suatu objek
 - onChanged: Widget ini akan dipanggil ketika user melakukan perubahan nilai pada suatu _fields_
 
-##Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
+## Jelaskan bagaimana cara kerja Navigator dalam "mengganti" halaman dari aplikasi Flutter.
 Kita dapat menggunakan Navigator.push atau Navigator.pushReplacement untuk menggatikan halaman.
 Perbedaannya telah dijelaskan pada jawaban pertanyaan pertama. Untuk ilustrasi dari cara kerjanya
 adalah sebagai berikut:
@@ -124,7 +124,7 @@ Navigator.push() (1), Navigator.push() (2), navigator.pushReplacement() (3), Nav
 Step (4) mengakibatkan halaman kembali ke halaman yang dipush pada step (1)
 
 
-##Jelaskan bagaimana cara kamu mengimplementasikan checklist di jawab
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di jawab
 1. Membuat _file_ baru bernama `drawer.dart`. Kemudian, buat suatu widget Drawer untuk
 melakukan navigasi ke halaman lain.
 2. Membuat _file_ baru bernama `form_budget.dart`. Kemudian, tambahkan kode yang diperlukan agar
@@ -136,15 +136,16 @@ objek Budget yang telah dibuat dapat ditampilkan kepada user.
 5. Membuat _file_ baru bernama `budget.dart` untuk membuat _class_ Budget dan BudgetStorage, yang
 menyimpan kumpulan objek Budget yang telah dibuat.
 
-#Tugas 9
-##Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+# Tugas 9
+
+## Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
 Bisa, data JSON yang diperoleh tersebut merupakan _raw data_, yang dikembalikan dalam bentuk HTTP _response_.
 Namun, hal tersebut tidak lebih baik dari membuat model sebelum melakukan pengambilan data JSON.
 Hal ini dikarenakan dapat mempersulit _developer_ ketika melakukan pencarian data. Dengan menggunakan model,
 _developer_ dapat memodelkan _raw data_ yang diperoleh ke dalam model yang diinginkan sehingga pencarian
 data dapat dilakukan dengan lebih mudah, jelas, dan cepat.
 
-##Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+## Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
 - ListTile: Widget yang digunakan untuk mengisi ListView di Flutter. Di dalam ListTile, terdapat
 attribut _leading_, _title_, _subtitle_, dan _trailing_, yang merupakan objek Widget.
 - Checkbox: Widget yang digunakan untuk membuat suatu _checkbox_ di Flutter
@@ -153,7 +154,7 @@ widget ukuran lebar dan tinggi tertentu.
 - Wrap: Widget yang digunakan untuk menampilakn widget pada _children_ nya agar dapat menyesuaikan
 dengan ukuran _device_.
 
-##Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+## Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
 Pengambilan data dari suatu URL _website_ dilakukan dengan menggunakan metode `http.get`, yang
 mengembalikan _response_. _Response_ tersebut kemudian akan di-_decode_ ke dalam bentuk JSON. Kemudian,
 data yang telah di-_decode_ tersebut akan diiterasi dengan cara `for var d in data`, dimana data tersebut
@@ -161,7 +162,7 @@ merupakan data yang telah di-_decode_. Kemudian, akan dikonversi menjadi objek D
 dengan cara `Movie.fromJson(d)`. Lalu, objek Movie tersebut akan disimpan ke dalam suatu List. Dengan
 menggunakan FutureBuilder, kita dapat menampilkannya pada aplikasi kita.
 
-##Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
 1. Menambahkan depedensi `http` ke proyek `counter_7`.
 2. Membuat _file_ baru bernama `movie.dart`. Kemudian, buat suatu model yang sesuai dengan _response_
 dari data yang berasal dari _website_.
