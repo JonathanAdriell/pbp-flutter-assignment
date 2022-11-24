@@ -135,3 +135,47 @@ objek Budget yang telah dibuat dapat ditampilkan kepada user.
 4. Tambahkan objek Drawer pada `main.dart`, `form_budget.dart`, dan `data_budget.dart`
 5. Membuat _file_ baru bernama `budget.dart` untuk membuat _class_ Budget dan BudgetStorage, yang
 menyimpan kumpulan objek Budget yang telah dibuat.
+
+#Tugas 9
+##Apakah bisa kita melakukan pengambilan data JSON tanpa membuat model terlebih dahulu? Jika iya, apakah hal tersebut lebih baik daripada membuat model sebelum melakukan pengambilan data JSON?
+Bisa, data JSON yang diperoleh tersebut merupakan _raw data_, yang dikembalikan dalam bentuk HTTP _response_.
+Namun, hal tersebut tidak lebih baik dari membuat model sebelum melakukan pengambilan data JSON.
+Hal ini dikarenakan dapat mempersulit _developer_ ketika melakukan pencarian data. Dengan menggunakan model,
+_developer_ dapat memodelkan _raw data_ yang diperoleh ke dalam model yang diinginkan sehingga pencarian
+data dapat dilakukan dengan lebih mudah, jelas, dan cepat.
+
+##Sebutkan widget apa saja yang kamu pakai di proyek kali ini dan jelaskan fungsinya.
+- ListTile: Widget yang digunakan untuk mengisi ListView di Flutter. Di dalam ListTile, terdapat
+attribut _leading_, _title_, _subtitle_, dan _trailing_, yang merupakan objek Widget.
+- Checkbox: Widget yang digunakan untuk membuat suatu _checkbox_ di Flutter
+- Sizedbox:  Widget yang dapat digunakan untuk memberikan jarak antara widget, atau memberikan suatu
+widget ukuran lebar dan tinggi tertentu.
+- Wrap: Widget yang digunakan untuk menampilakn widget pada _children_ nya agar dapat menyesuaikan
+dengan ukuran _device_.
+
+##Jelaskan mekanisme pengambilan data dari json hingga dapat ditampilkan pada Flutter.
+Pengambilan data dari suatu URL _website_ dilakukan dengan menggunakan metode `http.get`, yang
+mengembalikan _response_. _Response_ tersebut kemudian akan di-_decode_ ke dalam bentuk JSON. Kemudian,
+data yang telah di-_decode_ tersebut akan diiterasi dengan cara `for var d in data`, dimana data tersebut
+merupakan data yang telah di-_decode_. Kemudian, akan dikonversi menjadi objek Dart, dalam hal ini Movie,
+dengan cara `Movie.fromJson(d)`. Lalu, objek Movie tersebut akan disimpan ke dalam suatu List. Dengan
+menggunakan FutureBuilder, kita dapat menampilkannya pada aplikasi kita.
+
+##Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.
+1. Menambahkan depedensi `http` ke proyek `counter_7`.
+2. Membuat _file_ baru bernama `movie.dart`. Kemudian, buat suatu model yang sesuai dengan _response_
+dari data yang berasal dari _website_.
+3. Membuat _file_ baru bernama `fetch_movie.dart`. Kemudian, tambahkan kode untuk mengambil dan mengolah data
+dari _website_.
+4. Membuat _file_ baru bernama `mywatchlist.dart`. Kemudian, tambahkan kode yang diperlukan agar dapat menampilkan
+data dari _website_, dan dapat mengarah ke `MyWatchListDetail` ketika salah satu widget ListTile, yang menampilkan
+judul film, dipencet.
+5. Membuat _file_ baru bernama `mywatchlist_detail.dart`. Kemudian, tambahkan kode yang diperlukan agar dapat
+menampilkan informasi dari suatu film.
+6. Kemudian, tambahkan kode untuk membuat _checkbox_, yang sesuai dengan ketentuan bonus, pada widget ListTile
+di `mywatchlist.dart`.
+7. Tambahkan navigasi ke `MyWatchList` dan `MyWatchListDetail` pada Drawer di `drawer.dart`. Kemudian, tambahkan objek
+Drawer pada `mywatchlist.dart` dan `mywatchlist_detail.dart`.
+8. Buat dua _folder_ baru bernama `model`, yang berisi `budget.dart` dan `movie.dart`, dan `page`, yang berisi
+`data_budget.dart`, `drawer.dart`, `form_budget.dart`, `mywatchlist.dart`, `mywatchlist_detail.dart`.
+8. Tambahkan dan menyesuaikan `import` yang diperlukan pada setiap _file_.
