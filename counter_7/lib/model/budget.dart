@@ -1,5 +1,3 @@
-import 'package:counter_7/form_budget.dart';
-
 class Budget {
   String judul;
   int? nominal;
